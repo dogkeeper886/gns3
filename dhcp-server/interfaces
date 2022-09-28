@@ -1,0 +1,31 @@
+#
+# This is a sample network config, please uncomment lines to configure the network
+#
+
+# Uncomment this line to load custom interface files
+# source /etc/network/interfaces.d/*
+
+# Static config for eth0
+auto eth0
+iface eth0 inet static
+	address 10.100.2.8
+	netmask 255.255.255.0
+	gateway 10.100.2.1
+	up echo nameserver 10.10.10.10 > /etc/resolv.conf
+
+# Static config for eth1
+auto eth1
+iface eth1 inet static
+	address 100.0.0.1
+	netmask 255.255.255.0
+
+# Static config for eth2
+auto eth1
+iface eth1 inet static
+	address 101.0.0.1
+	netmask 255.255.255.0
+
+# DHCP config for eth0
+#auto eth0
+#iface eth0 inet dhcp
+#	hostname dhcp-server-1
